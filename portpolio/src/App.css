@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* fullpage 메뉴 스타일 */
+  #menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  
+  #menu li {
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  #menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 5px;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  
+  #menu li.active a {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .fp-right ul li a span  {
+    background-color: #fff !important;
+  }
+  
+  .fp-slidesNav ul li a span {
+    background-color: #fff !important;
+  }
+  
+  * {
+    color: #fff !important;
+  }
+  
+  .fp-warning, .fp-watermark {
+    display: none !important;
+  }
+    
+  
+  .fp-arrow:first-child {
+    left: 10px !important; /* 왼쪽 화살표 위치 */
+  }
+  
+  .fp-arrow:last-child {
+    right: 10px !important; /* 오른쪽 화살표 위치 */
+  }
+  .wrapper {
+    display: flex;
+  }
+  
+  .menu-item {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* 라인의 두께 */
+    background-color: #fff; /* 라인의 색상 */
+    transition: width 0.4s ease; /* 라인의 애니메이션 */
+  }
+  
+  .menu-item:hover::after {
+    width: 100%; /* 호버 시 라인이 전체 길이를 채움 */
+  }
+  
+  .fp-slidesNav.fp-bottom{
+    margin-left: 45% !important;
+  }
+  
+  .page1-left{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    transform: translate((-10%,-40%));
+    width: 50%;
+    color:#fff;
+  }
+  .page1-right{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate((-10%,-40%));
+    color:#fff;
+  }
+  
+  .image-box:hover .content-txt {
+    left: 30%;
+    color: crimson;
+  }
+  
+  
+  .userImage{
+    width: 300px;
+    height: 380px;
+    margin-left: 100px;
+  }
+  
+  .code-editor {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .code-editor pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
