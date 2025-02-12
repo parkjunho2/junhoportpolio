@@ -10,25 +10,25 @@ import Page2Second from './Page2/Page2Second';
 function App() {
   const [activeTab, setActiveTab] = useState('JS');
 
-  useEffect(() => {
-    fullpageLoading();
-  }, []); 
-
-  const fullpageLoading = useCallback(()=>{
+  const fullpageLoading = () => {
     new fullpage("#fullpage", {
       CSS3: true,
       sectionsColor: ['#FF6347', '#32CD32', '#1E90FF', '#FFD700'],
       navigation: true,
       navigationPosition: 'right',
       slidesNavigation: true,
-      controlArrows:false,
+      controlArrows: false,
       slidesNavPosition: 'bottom',
       navigationTooltips: ['Profile', 'EC5 JQuery', 'EC6 React', 'Extensions'],
       showActiveTooltip: true,
       menu: '#menu',
       scrollHorizontally: false,
     });
-  },[]);
+  };
+
+  useEffect(() => {
+    fullpageLoading();
+  }, []);
 
   const modal = useRef();
   const openModal = useCallback(()=>{
