@@ -6,7 +6,7 @@ const [activeTab, setActiveTab] = useState('JS');
     return(
         <>
         <div className='row'>
-                  <div className='col-6 ps-4'>
+                  <div className='col-md-6 col-sm-12 ps-4'>
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/map.mp4" type="video/mp4"/>
                   </video>
@@ -14,7 +14,7 @@ const [activeTab, setActiveTab] = useState('JS');
                     <h4>학교 위치를 찾도록 kakaoMap API사용하여 해당위치의 위도 경도에 마커와 이미지를 설정하여 지도웹페이지를
                     생성했습니다. 선택된 항목의 js코드에 addClass 사용하여 글자의 색이 변경하도록 시각적인 효과를 추가했습니다.</h4>
               </div>
-                  <div className='col-6'>
+                  <div className='col-md-6 col-sm-12'>
                   <div className='btn-group head'>
                     <button 
                       className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 
@@ -56,10 +56,10 @@ const [activeTab, setActiveTab] = useState('JS');
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d514f39f1a90b1f9acaf2ac1526268a"></script>
 
 $(function(){
-var container = document.querySelector('.kakao-map'); //지도를 생성하기 태크
+var container = document.querySelector('.kakao-map'); //지도생성 태크
 var options = {
-    center: new kakao.maps.LatLng(37.533826, 126.896837), //지도 위치 설정
-    level: 3 //- level:지도의 확대
+    center: new kakao.maps.LatLng(37.533826, 126.896837), //지도위치 설정
+    level: 3 //지도의 확대
 };
 
 window.kakaoMap = new kakao.maps.Map(container, options); //태그와 옵션을 이용하여 카카오 지도를 생성

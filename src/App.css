@@ -86,12 +86,39 @@
     margin-left: 45% !important;
   }
   
+  @keyframes slideInLeft {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateXY(0); 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateY(100%); 
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+  }
+
+  .page1-left{
+    animation: slideInLeft 1s ease-out forwards;
+  }
+
   .page1-right{
     position: absolute;
     top: 30%;
     left: 50%;
     width: 100%;
     color:#fff;
+    animation: slideInRight 1s ease-out forwards; 
   }
   
   .code-editor {
