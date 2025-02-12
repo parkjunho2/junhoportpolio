@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* fullpage 메뉴 스타일 */
+
   #menu {
     position: fixed;
     top: 10px;
@@ -80,7 +75,7 @@
     width: 0;
     height: 2px; /* 라인의 두께 */
     background-color: #fff; /* 라인의 색상 */
-    transition: width 0.4s ease; /* 라인의 애니메이션 */
+    transition: width 1s ease; /* 라인의 애니메이션 */
   }
   
   .menu-item:hover::after {
@@ -91,32 +86,12 @@
     margin-left: 45% !important;
   }
   
-  .page1-left{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    transform: translate((-10%,-40%));
-    width: 50%;
-    color:#fff;
-  }
   .page1-right{
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
-    transform: translate((-10%,-40%));
+    width: 100%;
     color:#fff;
-  }
-  
-  .image-box:hover .content-txt {
-    left: 30%;
-    color: crimson;
-  }
-  
-  
-  .userImage{
-    width: 300px;
-    height: 380px;
-    margin-left: 100px;
   }
   
   .code-editor {
@@ -126,9 +101,11 @@
     border-radius: 8px;
     font-family: 'Fira Code', monospace;
     font-size: 14px;
-    overflow-x: auto;
-    white-space: pre;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+    min-height: 600px !important;
+    max-width: 90%;
+    white-space: pre-wrap;
   }
   
   .code-editor pre {
@@ -136,3 +113,105 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  .imageBox {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; 
+  }
+  
+  .userImage {
+    width: 300px;
+    height: 380px;
+    margin-left: 100px;
+    max-width: 100%;
+  }
+  
+  .overlay {
+    position: absolute;
+    left: 0;
+    margin-left: 100px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: none; /* 기본적으로 숨김 */
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 99;
+    padding-bottom: 100px;
+  }
+  
+  .imageBox:hover .overlay {
+    display: flex; /* 호버 시 overlay 표시 */
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+  .modal-title, .modal-body>div, .modal-footer {
+    text-align: center;
+    color: #000000 !important; /* 검은색으로 글씨 색상을 변경 */
+  }
+  .modal-dialog {
+    margin-top: 300px !important; /* 원하는 만큼 내리기 */
+  }
+  
+  .slide, .section {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .videos{
+    width: 700px !important;
+    height: 500px !important;
+  }
+
+  .erd{
+    width: 400px !important;
+    height: 200px !important;
+  }
+    
+  /* preview-modal 스타일 */
+.preview-modal {
+  position: absolute;
+  width: 475px;
+  height: 280px;
+  z-index: 9999999999999;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  overflow: hidden; /* 비율에 맞게 내용이 넘치지 않도록 */
+}
+
+/* 로딩 아이콘 스타일 */
+.loading-icon {
+  position: absolute;
+  top: 43%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* 로딩 애니메이션 */
+}
+
+/* iframe 스타일 */
+.iframe {
+  zoom: 0.40;  /* 페이지 내용 40%로 축소 */
+  width: 100% !important;  /* 100% 가로 */
+  height: 100%; /* 100% 세로 */
+  border: none;
+}
+
+/* 로딩 애니메이션 */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
