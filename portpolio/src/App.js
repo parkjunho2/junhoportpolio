@@ -5,6 +5,7 @@ import fullpage from 'fullpage.js';
 import { FaGithub } from "react-icons/fa6";
 import { Modal } from 'bootstrap';
 import Preview from './components/Preview'; 
+import Page2Second from './Page2/Page2Second';
 
 function App() {
   const [activeTab, setActiveTab] = useState('JS');
@@ -103,7 +104,7 @@ function App() {
                     
                     </div>
                   </div>
-                  <img src='/images/profile.png' className='userImage'/>
+                  <img src='/images/profile.png' className='userImage' alt="" />
                 </div>
                   </div>
                 </div>
@@ -142,7 +143,7 @@ function App() {
 
 
                 <div className='slide'>
-              <h1 className='ms-5 text-danger mb-0'>/*Devlopment Environment*/</h1>
+              <h1 className='ms-5 text-danger mb-0'>{`/*Development Environment*/`}</h1>
               <pre className='text-black mt-0' style={{ fontSize: '19.5px', fontWeight: 'bold' ,fontFamily: 'sans-serif' }}>{`
 1    {
 2       "BackEnd" : {
@@ -173,83 +174,7 @@ function App() {
               </div>
 
               <div className='slide'>
-              <div className='row'>
-                  <div className='col-6 ps-4'>
-                  <video className="videos" autoPlay muted loop playsInline>
-                    <source src="/videos/map.mp4" type="video/mp4"/>
-                  </video>
-                    <h1 className='text-warning'>담당파트 지도API</h1>
-                    <h4>학교 위치를 찾도록 kakaoMap API사용하여 해당위치의 위도 경도에 마커와 이미지를 설정하여 지도웹페이지를
-                    생성했습니다. 선택된 항목의 js코드에 addClass 사용하여 글자의 색이 변경하도록 시각적인 효과를 추가했습니다.</h4>
-              </div>
-                  <div className='col-6'>
-                  <div className='btn-group head'>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('JS')}>
-                      JS
-                    </button>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'JSX' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('JSX')}>
-                      HTML
-                    </button>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'CSS' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('CSS')}>
-                      CSS
-                    </button>
-                    <div className='btn-group head'>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Controller' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Controller')}>
-                      Controller
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Service')}>
-                      Service
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Repository')}>
-                      Repository
-                    </button>
-                    </div>
-                  </div>
-
-                    <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    JS코드
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'JSX' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    JSX코드
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'CSS' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    CSS코드
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'Controller' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    Controller
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'Service' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    Service
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    Repository
-                  </code></pre>
-                </div>
-                  </div>
-                </div>
+                <Page2Second/>
               </div>
               <div className='slide'>
               <div className='row'>
