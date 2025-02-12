@@ -12,7 +12,7 @@ const [activeTab, setActiveTab] = useState('JS');
                   </video>
                     <h1 className='text-warning'>담당파트 지도API</h1>
                     <h4>학교 위치를 찾도록 kakaoMap API사용하여 해당위치의 위도 경도에 마커와 이미지를 설정하여 지도웹페이지를
-                    생성했습니다. 선택된 항목의 js코드에 addClass 사용하여 글자의 색이 변경하도록 시각적인 효과를 추가했습니다.</h4>
+                    생성했습니다. 선택된 항목의 js코드에 addClass 사용하여 글자의 색이 변경하도록 시각적인 효과를 추가했습니다</h4>
               </div>
                   <div className='col-6'>
                   <div className='btn-group head'>
