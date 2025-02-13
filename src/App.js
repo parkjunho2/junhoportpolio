@@ -48,7 +48,7 @@ function App() {
       activeItem.classList.add('active');  // 새로운 항목에 active 클래스 추가
     }
   };
-
+ㅞ
   useEffect(() => {
     fullpageLoading();
   }, [fullpageLoading]);
