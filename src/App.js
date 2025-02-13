@@ -51,7 +51,7 @@ function App() {
 
   useEffect(() => {
     fullpageLoading();
-  }, []);
+  }, [fullpageLoading]);
 
   return (
     <>
