@@ -5,7 +5,7 @@ const Page2DepartmentEdit=()=>{
     
     return(<>
   <div className='row w-100'>
-      <div className='col-md-6 col-sm-12 ps-2'>
+      <div className='col-md-6 col-sm-12 ps-4'>
       <video className="videos" autoPlay muted loop playsInline>
         <source src="/videos/departmentedit.mp4" type="video/mp4"/>
       </video>

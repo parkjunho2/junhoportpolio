@@ -4,7 +4,7 @@ const Page2Info=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     return(<>
     <div className="row align-items-start w-100">
-        <div className='col-md-6 col-sm-12'>    
+        <div className='col-md-6 col-sm-12 ps-4'>    
             <pre className='text-black' style={{ fontSize: '19px', fontWeight: 'bold' ,fontFamily: 'sans-serif' }}>{`
 1      {
 2           "BackEnd" : {
