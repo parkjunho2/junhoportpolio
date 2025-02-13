@@ -18,17 +18,6 @@ import Page2LectureRemove from './Page2/Page2LectureRemove';
 
 function App() {
 
-  const updateMenuActiveState = useCallback((sectionIndex) => {
-    const menuItems = document.querySelectorAll('#menu li');
-    menuItems.forEach(item => {
-      item.classList.remove('active'); // 기존 활성화된 항목 제거
-    });
-    const activeItem = menuItems[sectionIndex];
-    if (activeItem) {
-      activeItem.classList.add('active'); // 새로운 항목에 active 클래스 추가
-    }
-  }, []);
-
   const fullPageLoading = useCallback(() => {
     new fullpage("#fullpage", {
       CSS3: true,
@@ -43,13 +32,9 @@ function App() {
       menu: '#menu',
       scrollHorizontally: false,
       anchors: ['Profile', 'JQuery', 'React', 'Extensions'],
-      onLeave: (destination) => {
-        updateMenuActiveState(destination.index);
-      }
     });
-  }, [updateMenuActiveState]);
+  }, []);
 
- 
   useEffect(() => {
     fullPageLoading();
   }, [fullPageLoading]); 
