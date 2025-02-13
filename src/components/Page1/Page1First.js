@@ -49,9 +49,8 @@ const Page1First=()=>{
                   </div>
                   </div>
                   </div>
-                  <div className='page1-right ms-5 ps-5 col-md-6 col-sm-12'>
+                  <div className='page1-right col-md-6 col-sm-12'>
                   <div className='imageBox'>
-                  
                   <img src='/images/profile.png' className='userImage' alt="" />
                 </div>
                   </div>
