@@ -1,275 +1,205 @@
+#menu {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
 
-  #menu {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-  }
-  
-  #menu li {
-    display: inline-block;
-    margin: 10px;
-  }
-  
-  #menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    padding: 5px;
-    display: block;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-  }
-  
-  
-  #menu li.active a {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .fp-right ul li a span  {
-    background-color: #fff !important;
-  }
-  
-  .fp-slidesNav ul li a span {
-    background-color: #fff !important;
-  }
-  
-  * {
-    color: #fff !important;
-  }
-  
-  .fp-warning, .fp-watermark {
-    display: none !important;
-  }
-    
-  
-  .fp-arrow:first-child {
-    left: 10px !important; /* 왼쪽 화살표 위치 */
-  }
-  
-  .fp-arrow:last-child {
-    right: 10px !important; /* 오른쪽 화살표 위치 */
-  }
-  .wrapper {
-    display: flex;
-  }
-  
-  .menu-item {
-    position: relative;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .menu-item::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px; /* 라인의 두께 */
-    background-color: #fff; /* 라인의 색상 */
-    transition: width 1s ease; /* 라인의 애니메이션 */
-  }
-  
-  .menu-item:hover::after {
-    width: 100%; /* 호버 시 라인이 전체 길이를 채움 */
-  }
-  
-  .fp-slidesNav.fp-bottom{
-    margin-left: 45% !important;
-  }
-  
-  @keyframes slideInLeft {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateXY(0); 
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    0% {
-      transform: translateY(100%); 
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0); 
-      opacity: 1;
-    }
-  }
+#menu li {
+  display: inline-flex;
+  margin: 10px;
+}
 
-  .page1-left{
-    animation: slideInLeft 1s ease-out forwards;
-  }
+#menu a {
+  text-decoration: none;
+  padding: 5px;
+  color: #fff !important;
+}
 
-  .page1-right{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 100%;
-    color:#fff;
-    animation: slideInRight 1s ease-out forwards; 
+.fp-right ul li a span  {
+  background-color: #fff !important;
+}
+
+.fp-slidesNav ul li a span {
+  background-color: #fff !important;
+}
+
+.fp-warning, .fp-watermark {
+  display: none !important;
+}
+
+.fp-slidesNav.fp-bottom{
+  margin-left: 40% !important;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  
-  .code-editor {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 15px;
-    border-radius: 8px;
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-    overflow: auto !important;
-    min-height: 600px !important;
-    max-height: 600px !important;
-    width: 600px !important;
-    word-wrap: break-word;
-    overflow-x: scroll !important;
-    white-space: nowrap;
+  100% {
+    transform: translateXY(0); 
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateY(100%); 
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); 
+    opacity: 1;
+  }
+}
+
+.page1-left{
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.page1-right{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100%;
+  color:#fff;
+  animation: slideInRight 1s ease-out forwards; 
+}
+
+.code-editor {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 2%;
+  border-radius: 8px;
+  font-size: 14px;
+  overflow: auto !important;
+  min-height: 600px !important;
+  max-height: 600px !important;
+  width: 83% !important;
 }
 
 .code-editor pre {
-    margin: 0;
-    word-wrap: break-word;
-    overflow-x: scroll !important;
-    height: 100%;
-    min-width: 1000px; 
+  word-wrap: break-word;
+  height: 100%;
+  min-width: 1000px; 
 }
 
-/* 스크롤바 스타일 추가 */
 .code-editor::-webkit-scrollbar {
-    width: 8px;  /* 세로 스크롤바 너비 */
-    height: 8px; /* 가로 스크롤바 높이 */
+  width: 8px;  /* 세로 스크롤바 너비 */
+  height: 8px; /* 가로 스크롤바 높이 */
 }
 
-/* 세로 스크롤바 스타일 */
 .code-editor::-webkit-scrollbar-thumb {
-    background-color: #888;  /* 스크롤바 색상 */
-    border-radius: 4px;      /* 둥근 모서리 */
-}
-
-.code-editor::-webkit-scrollbar-thumb:hover {
-    background-color: #555;  /* 스크롤바 hover 색상 */
+  background-color: #888;  /* 스크롤바 색상 */
+  border-radius: 4px;      /* 둥근 모서리 */
 }
 
 /* 스크롤바 배경 */
 .code-editor::-webkit-scrollbar-track {
-    background-color: #f1f1f1;  /* 스크롤바 배경 색상 */
-    border-radius: 4px;
+  background-color: #f1f1f1;  /* 스크롤바 배경 색상 */
+  border-radius: 4px;
 }
 
-/* 가로 스크롤 추가: 특정 조건에서 가로 스크롤을 강제로 표시하려면 */
-.code-editor {
-    white-space: nowrap; /* 텍스트가 한 줄로 늘어지게 하고, 넘치면 가로 스크롤이 생김 */
+.imageBox {
+  position: relative;
+  display: inline-block;
+  max-width: 100%; 
 }
 
-  .imageBox {
-    position: relative;
-    display: inline-block;
-    max-width: 100%; 
-  }
-  
-  .userImage {
-    width: 300px;
-    height: 380px;
-    margin-left: 100px;
-    max-width: 100%;
-  }
-  
-  .overlay {
-    position: absolute;
-    left: 0;
-    margin-left: 100px;
-    width: 300px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    display: none; /* 기본적으로 숨김 */
-    justify-content: center;
-    align-items: flex-end;
-    z-index: 99;
-    padding-bottom: 100px;
-  }
-  
-  .imageBox:hover .overlay {
-    display: flex; /* 호버 시 overlay 표시 */
-  }
+.userImage {
+  width: 80%;
+}
 
-  .icon {
-    font-size: 30px;
-  }
-  .modal-title, .modal-body>div, .modal-footer {
-    text-align: center;
-    color: #000000 !important; /* 검은색으로 글씨 색상을 변경 */
-  }
-  .modal-dialog {
-    margin-top: 300px !important; /* 원하는 만큼 내리기 */
-  }
+.modal-title, .modal-body>div, .modal-footer {
+  text-align: center;
+  color: #000000 !important; /* 검은색으로 글씨 색상을 변경 */
+}
+.modal-dialog {
+  margin-top: 300px !important; /* 원하는 만큼 내리기 */
+}
+
+.videos{
+  width: 100% !important;
+}
   
-  .slide, .section {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .videos{
-    width: 700px !important;
-    height: 500px !important;
-  }
-
-  .erd{
-    width: 400px !important;
-    height: 200px !important;
-  }
-    
-  /* preview-modal 스타일 */
 .preview-modal {
-  position: absolute;
-  width: 475px;
-  height: 280px;
-  z-index: 9999999999999;
-  border: 1px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  overflow: hidden; /* 비율에 맞게 내용이 넘치지 않도록 */
+position: absolute;
+width: 30%;
+height: 35%;
+z-index: 9999999999999;
+background-color: #fff;
 }
 
 /* 로딩 아이콘 스타일 */
 .loading-icon {
-  position: absolute;
-  top: 43%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite; /* 로딩 애니메이션 */
+position: absolute;
+top: 43%;
+left: 44%;
+transform: translate(-50%, -50%);
+border: 4px solid #f3f3f3;
+border-top: 4px solid #3498db;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+animation: spin 1s linear infinite; /* 로딩 애니메이션 */
 }
 
 /* iframe 스타일 */
 .iframe {
-  zoom: 0.40;  /* 페이지 내용 40%로 축소 */
-  width: 100% !important;  /* 100% 가로 */
-  height: 100%; /* 100% 세로 */
-  border: none;
+zoom: 0.40;  /* 페이지 내용 40%로 축소 */
+width: 100% !important;  /* 100% 가로 */
+height: 100%; /* 100% 세로 */
+border: none;
 }
 
 /* 로딩 애니메이션 */
 @keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
 }
 
+/* 메뉴 항목에 대해 상대 위치를 설정 */
+#menu li a {
+  position: relative; 
+}
+
+/* 기본 메뉴 항목에 밑줄을 추가 */
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 기본적으로 밑줄의 길이는 0 */
+  background-color: #fff; 
+  height: 2px; 
+  transition: width 1s ease; 
+}
+
+/* 호버 시 밑줄이 100% 확장 */
+.menu-item:hover::after {
+  width: 100%;
+}
+
+/* 활성화된 항목에 대해서 밑줄이 100% 확장 */
+#menu li.active a::after {
+  content: ''; 
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* 활성화된 항목에 밑줄이 100% 확장 */
+  height: 2px; 
+  background-color: #fff; 
+  transition: width 1s ease;
+}
+
+/* 호버 상태에서 활성화된 항목의 밑줄은 덮어쓰지 않도록 처리 */
+#menu li.active a:hover::after {
+  width: 100%; /* 호버 시에도 활성화된 항목은 밑줄이 유지되도록 설정 */
+}

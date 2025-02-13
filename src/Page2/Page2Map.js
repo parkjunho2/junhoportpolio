@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Page2Second=()=>{
+const Page2Map=()=>{
 const [activeTab, setActiveTab] = useState('JS');
 
     return(
@@ -10,9 +10,12 @@ const [activeTab, setActiveTab] = useState('JS');
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/map.mp4" type="video/mp4"/>
                   </video>
-                    <h1 className='text-warning'>담당파트 지도API</h1>
-                    <h4>학교 위치를 찾도록 kakaoMap API사용하여 해당위치의 위도 경도에 마커와 이미지를 설정하여 지도웹페이지를
-                    생성했습니다. 선택된 항목의 js코드에 addClass 사용하여 글자의 색이 변경하도록 시각적인 효과를 추가했습니다.</h4>
+                  <h1 className="text-primary mt-4">지도 페이지</h1>
+                  <h4>
+                  KakaoMap API를 호스트에 IPv4 등록 후 
+                  Request API키를 호출하여
+                  권장하는 guide에 맞게 코드를 작성하여 추가적으로 버튼과 마커에 시각적인 디자인을 적용했습니다.
+                  </h4>
               </div>
                   <div className='col-md-6 col-sm-12'>
                   <div className='btn-group head'>
@@ -22,8 +25,8 @@ const [activeTab, setActiveTab] = useState('JS');
                       JS
                     </button>
                     <button 
-                      className={`btn btn-primary ${activeTab === 'JSX' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('JSX')}>
+                      className={`btn btn-primary ${activeTab === 'HTML' ? 'active' : ''}`} 
+                      onClick={() => setActiveTab('HTML')}>
                       HTML
                     </button>
                     <button 
@@ -37,39 +40,29 @@ const [activeTab, setActiveTab] = useState('JS');
                       onClick={() => setActiveTab('Controller')}>
                       Controller
                     </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Service')}>
-                      Service
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Repository')}>
-                      Repository
-                    </button>
                     </div>
                   </div>
 
                     <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-{`<!--카카오 맵API-->
+<span className="text-danger">{`<!--카카오 맵API-->`}</span>{`
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d514f39f1a90b1f9acaf2ac1526268a"></script>
 
 $(function(){
-var container = document.querySelector('.kakao-map'); //지도생성 태크
+var container = document.querySelector('.kakao-map');`}<span className="text-danger"> //지도생성 태크</span>{`
 var options = {
-    center: new kakao.maps.LatLng(37.533826, 126.896837), //지도위치 설정
-    level: 3 //지도의 확대
+    center: new kakao.maps.LatLng(37.533826, 126.896837),`}<span className="text-danger"> //지도위치 설정</span>{`
+    level: 3 `}<span className="text-danger"> //지도의 확대</span>{`
 };
 
-window.kakaoMap = new kakao.maps.Map(container, options); //태그와 옵션을 이용하여 카카오 지도를 생성
+window.kakaoMap = new kakao.maps.Map(container, options); `}<span className="text-danger"> //태그와 옵션을 이용하여 카카오 지도를 생성</span>{`
 kakaoMap.setLevel(3);
-var imageSrc = {pageContext.request.contextPath}/images/education.png", //마커이미지
+var imageSrc = {pageContext.request.contextPath}/images/education.png", //마커이미지 `}<span className="text-danger"> //마커이미지</span>{`
 imageSize = new kakao.maps.Size(64, 69),
 imageOption = { offset: new kakao.maps.Point(27, 69) };
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption); //마커정보
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption); `}<span className="text-danger"> //마커정보</span>{`
 
-function loadMapList(map){ //클릭한 지도 위치로 이동
+function loadMapList(map){ `}<span className="text-danger"> //클릭한 지도 위치로 이동</span>{`
     var lat, lng;
     $("btn-map").removeClass("red").addClass("black");
     switch(map) {
@@ -103,14 +96,14 @@ function loadMapList(map){ //클릭한 지도 위치로 이동
         break;
     }
     
-    var location = new kakao.maps.LatLng(lat, lng); //parameter
+    var location = new kakao.maps.LatLng(lat, lng); `}<span className="text-danger"> //parameter</span>{`
     kakaoMap.setCenter(location);
     if (window.kakaoMapMarker) {
         kakaoMapMarker.setMap(null);
         kakaoMapMarker = null;
     }
     
-    window.kakaoMapMarker = new kakao.maps.Marker({ //지도에 파라미터추가
+    window.kakaoMapMarker = new kakao.maps.Marker({ `}<span className="text-danger">//지도에 파라미터추가</span>{`
         position: location,
         image: markerImage
         });
@@ -121,14 +114,14 @@ function loadMapList(map){ //클릭한 지도 위치로 이동
 
     loadMapList(map);
 $(".btn-map").click(function(){ 
-    var lat = $(this).attr("data-lat"); //위도 정보
-    var lng = $(this).attr("data-lng"); //경도 정보
-    $(".btn-map").removeClass("red").addClass("black"); //스타일 수정
+    var lat = $(this).attr("data-lat"); `}<span className="text-danger"> //위도 정보</span>{`
+    var lng = $(this).attr("data-lng"); `}<span className="text-danger"> //경도 정보</span>{`
+    $(".btn-map").removeClass("red").addClass("black"); `}<span className="text-danger">//스타일 수정 </span>{`
     $(".btn-map i").removeClass("red").addClass("black");
     $(this).removeClass("black").addClass("red");
     $(this).find('i').removeClass("black").addClass("red");
 
-    var location = new kakao.maps.LatLng(lat, lng); //지도를 이동
+    var location = new kakao.maps.LatLng(lat, lng); `}<span className="text-danger"></span>{`
     kakaoMap.setLevel(3);
     kakaoMap.setCenter(location);
     if(window.kakaoMapMarker){
@@ -139,20 +132,64 @@ $(".btn-map").click(function(){
     position:location,
     image: markerImage
     });
-    kakaoMapMarker.setMap(kakaoMap); //지도에 마커 설정
+    kakaoMapMarker.setMap(kakaoMap); `}<span className="text-danger">//지도에 마커 설정</span>{`
 });
 });
 `}
                   </code></pre>
                 </div>
-                <div className={activeTab === 'JSX' ? 'code-editor' : 'd-none'}>
+                <div className={activeTab === 'HTML' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    JSX코드
+{`<div class="container omega px-10 mx-20 my-20">
+<div class=" center"> `}<span className="text-danger"> //모달</span>{`
+  <h3 class="my-0 underline">캠퍼스 정보</h3>
+</div>
+<div class="mt-10 center">
+  <a href="#" data-lat="37.499" data-lng="127.0328" class="link link-animation black btn-map gangNam">
+    강남 캠퍼스 
+    <i class="fa-solid fa-location-arrow black"></i>
+  </a>
+</div>
+<div class=" center">
+  <a href="#" data-lat="37.5679" data-lng="126.983" class="link link-animation black btn-map jongRo">
+    종로 캠퍼스
+    <i class="fa-solid fa-location-arrow black"></i>
+  </a>
+</div>
+<div class=" center">
+  <a href="#"  data-lat="37.533826" data-lng="126.896837" class="link link-animation black btn-map dangSan">
+    당산 캠퍼스
+    <i class="fa-solid fa-location-arrow black"></i>
+  </a>
+</div>
+</div>
+<div class="kakao-map"></div> `}<span className="text-danger"> //화면출력<br/></span>
+<span className="text-danger">{`<!-- footer 추가 -->`}</span><br/>
+{`<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>`}<br/>
+{`    
+<div class="w-25">`}<span className="text-danger">{` //Footer Page`}</span>{`
+  <div class="row center">
+      <h3>캠퍼스 정보</h3>
+      <div>
+        <a href="{pageContext.request.contextPath}/home/map?mapW=gangNam" data-lat="37.499" data-lng="127.0328" class="link link-animation campus">강남 캠퍼스
+          <i class="fa-solid fa-square-arrow-up-right"></i></a>
+      </div>
+      <div>
+        <a href="{pageContext.request.contextPath}/home/map?mapW=jongRo" data-lat="37.5679" data-lng="126.983" class="link link-animation campus">종로 캠퍼스
+          <i class="fa-solid fa-square-arrow-up-right"></i></a>
+      </div>
+      <div>
+        <a href="{pageContext.request.contextPath}/home/map?mapW=dangSan"  data-lat="37.533826" data-lng="126.896837" class="link link-animation campus">당산 캠퍼스
+          <i class="fa-solid fa-square-arrow-up-right"></i></a>
+      </div>
+</div>
+</div>
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'CSS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-{`.kakao-map{
+{`.kakao-map{ `}<span className="text-danger">{` //지도 크기 조정`}</span>{`
    	position: relative;
 	width: 100%;
 	height: 100%;
@@ -160,7 +197,9 @@ $(".btn-map").click(function(){
 	margin: auto;
 	padding: auto;
 }
-.btn{
+
+`}<span className="text-danger">{`//시각적 디자인`}</span>{`
+.btn{ 
 	position: absolute;
 	z-index: 5;
 	flex-direction: column;
@@ -194,17 +233,17 @@ $(".btn-map").click(function(){
                 </div>
                 <div className={activeTab === 'Controller' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Controller
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'Service' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    Service
-                  </code></pre>
-                </div>
-                <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
-                  <pre><code>
-                    Repository
+{`
+@Controller
+@RequestMapping("/home")
+public class HomeController {
+  
+  @RequestMapping("/map")`}<span className="text-danger"> //카카오맵</span>{`
+  public String map() {
+    return "/WEB-INF/views/home/map.jsp";
+  }
+}
+`}
                   </code></pre>
                 </div>
                   </div>
@@ -212,4 +251,4 @@ $(".btn-map").click(function(){
         </>
     )
 }
-export default Page2Second;
+export default Page2Map;

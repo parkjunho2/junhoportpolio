@@ -51,15 +51,7 @@ const Page1First=()=>{
                   </div>
                   <div className='page1-right ms-5 ps-5 col-md-6 col-sm-12'>
                   <div className='imageBox'>
-                  <div className='overlay'>
-                    <div>
-                      <a href='https://naver.com' className='mx-3'><FaGithub className='icon'/></a>
-                      <a href='https://naver.com' className='mx-3'><FaGithub className='icon'/></a>
-                      <a href='https://naver.com' className='mx-3'><FaGithub className='icon'/></a>
-                      <a href='https://naver.com' className='mx-3'><FaGithub className='icon'/></a>
-                    
-                    </div>
-                  </div>
+                  
                   <img src='/images/profile.png' className='userImage' alt="" />
                 </div>
                   </div>
