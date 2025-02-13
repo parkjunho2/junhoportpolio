@@ -3,7 +3,7 @@ const Page2First=()=>{
 
     return(<>
     <div className='row w-100'>
-                  <div className='col-md-6 col-sm-12'>
+                  <div className='col-md-6 col-sm-12 ps-2'>
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/login.mp4" type="video/mp4"/>
                   </video>
