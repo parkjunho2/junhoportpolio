@@ -4,7 +4,7 @@ const Page2DepartmentRemove=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     
     return(<>
-  <div className='row'>
+  <div className='row w-100'>
                   <div className='col-md-6 col-sm-12 ps-4'>
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/departmentdelete.mp4" type="video/mp4"/>
@@ -29,21 +29,11 @@ const Page2DepartmentRemove=()=>{
                       onClick={() => setActiveTab('JSX')}>
                       HTML
                     </button>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'CSS' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('CSS')}>
-                      CSS
-                    </button>
                     <div className='btn-group head'>
                     <button 
                       className={`btn btn-success ${activeTab === 'Controller' ? 'active' : ''}`} 
                       onClick={() => setActiveTab('Controller')}>
                       Controller
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Service')}>
-                      Service
                     </button>
                     <button 
                       className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
@@ -55,12 +45,69 @@ const Page2DepartmentRemove=()=>{
 
                     <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-
+{`
+function showMessage(message) {
+     if (message === 'edit') 
+    	 loadCheck();
+ }
+`}<span className="text-danger">{`//Alert`}</span>{`
+ $(document).ready(function() {
+     var urlParams = new URLSearchParams(window.location.search);
+     var message = urlParams.get('message');
+     if (message) {
+         showMessage(message); 
+     }
+ });
+`}<span className="text-danger">{`//SweetAlert2`}</span>{` 
+ function loadCheck() {
+	 Swal.fire({
+     icon: 'success',
+     iconColor: "#6695C4",
+     title: '수정 완료.',
+     showConfirmButton: false,
+     timer: 1500         
+  });
+};	
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'JSX' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    JSX코드
+{`<div class="container w-500 my-50">
+
+<c:choose>
+    <c:when test="{departmentDto == null}">
+    <div class="row center">
+        <h1>존재하지 않는 학과 정보 입니다.</h1>
+        </div>
+    </c:when>
+<c:otherwise>
+
+<div class="row center my-50">
+<h1>학과 상세정보</h1>
+</div>
+    <table class="table table-border">
+        <tr>
+            <th width="30%">학과코드</th>
+            <td>{departmentDto.departmentCode}</td>
+        </tr>
+        <tr>
+            <th>학과명</th>
+            <td>{departmentDto.departmentName}</td>
+        </tr>
+    </table>
+    </c:otherwise>
+</c:choose>
+
+<div class="row float-box center mt-30">
+<a href="expand" class="btn btn-positive"><i class="fa-solid fa-building-columns"></i> 학과개설</a>
+<a href="list" class="btn btn-neutral"><i class="fa-solid fa-list"></i> 목록이동</a>
+<a href="edit?departmentCode={departmentDto.departmentCode}" class="btn btn-neutral"><i class="fa-solid fa-eraser"></i> 학과수정</a>
+<a href="reduce?departmentCode={departmentDto.departmentCode}"class="btn btn-negative confirm-link" 
+      data-text="정말 삭제하시겠습니까?"><i class="fa-solid fa-trash"></i> 학과삭제</a>
+</div>
+</div>    
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'CSS' ? 'code-editor' : 'd-none'}>
@@ -70,7 +117,23 @@ const Page2DepartmentRemove=()=>{
                 </div>
                 <div className={activeTab === 'Controller' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Controller
+{``}<span className="text-danger">{`//학과 삭제`}</span>{` 
+@RequestMapping("/reduce")
+public String reduce(@RequestParam String departmentCode, @ModelAttribute PageVO pageVO) {
+  boolean result = adminDepartmentDao.reduce(departmentCode);
+  if(result == false)
+    throw new TargetNotFoundException("존재하지 않는 학과입니다.");
+  return "redirect:list?page=" + pageVO.getPage() + "&message=reduce"; 
+}
+
+`}<span className="text-danger">{`//학과 상세정보`}</span>{` 
+@RequestMapping("detail")
+public String detail(@RequestParam String departmentCode, Model model) {
+  DepartmentDto departmentDto = adminDepartmentDao.selectOne(departmentCode);
+  model.addAttribute("departmentDto", departmentDto);
+  return "/WEB-INF/views/admin/department/detail.jsp";
+}
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'Service' ? 'code-editor' : 'd-none'}>
@@ -80,7 +143,21 @@ const Page2DepartmentRemove=()=>{
                 </div>
                 <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Repository
+{``}<span className="text-danger">{`//학과 삭제`}</span>{` 
+public boolean reduce(String departmentCode) {
+  String sql = "delete department where department_code=?";
+  Object[] data = {departmentCode};
+	return jdbcTemplate.update(sql, data) > 0;
+}
+
+`}<span className="text-danger">{`//학과 상세정보`}</span>{` 
+public DepartmentDto selectOne(String departmentCode) {
+  String sql= "select * from department where department_code=?";
+  Object[] data = {departmentCode};
+  List<DepartmentDto> list = jdbcTemplate.query(sql, departmentMapper, data);
+  return list.isEmpty() ? null : list.get(0);
+}
+`}
                   </code></pre>
                 </div>
                   </div>

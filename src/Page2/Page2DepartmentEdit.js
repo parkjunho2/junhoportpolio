@@ -4,56 +4,56 @@ const Page2DepartmentEdit=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     
     return(<>
-  <div className='row'>
-                  <div className='col-md-6 col-sm-12 ps-4'>
-                  <video className="videos" autoPlay muted loop playsInline>
-                    <source src="/videos/departmentedit.mp4" type="video/mp4"/>
-                  </video>
-                  <h1 className="text-primary mt-4">학과 수정</h1>
-                    <h4>
-                    검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
-                    비동기 통신사용 하여 입력 상태 유무 검사
-                    RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
-                    MVC 패턴 사용하여 RequestParam 으로 정보 출력
-                    </h4>
-              </div>
-                  <div className='col-md-6 col-sm-12'>
-                  <div className='btn-group head'>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('JS')}>
-                      JS
-                    </button>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'JSX' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('JSX')}>
-                      HTML
-                    </button>
-                    <button 
-                      className={`btn btn-primary ${activeTab === 'CSS' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('CSS')}>
-                      CSS
-                    </button>
-                    <div className='btn-group head'>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Controller' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Controller')}>
-                      Controller
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Service')}>
-                      Service
-                    </button>
-                    <button 
-                      className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
-                      onClick={() => setActiveTab('Repository')}>
-                      Repository
-                    </button>
-                    </div>
-                  </div>
+  <div className='row w-100'>
+      <div className='col-md-6 col-sm-12'>
+      <video className="videos" autoPlay muted loop playsInline>
+        <source src="/videos/departmentedit.mp4" type="video/mp4"/>
+      </video>
+      <h1 className="text-primary mt-4">학과 수정</h1>
+        <h4>
+        검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
+        비동기 통신사용 하여 입력 상태 유무 검사
+        RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
+        MVC 패턴 사용하여 RequestParam 으로 정보 출력
+        </h4>
+  </div>
+      <div className='col-md-6 col-sm-12'>
+      <div className='btn-group head'>
+        <button 
+          className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('JS')}>
+          JS
+        </button>
+        <button 
+          className={`btn btn-primary ${activeTab === 'JSX' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('JSX')}>
+          HTML
+        </button>
+        <button 
+          className={`btn btn-primary ${activeTab === 'CSS' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('CSS')}>
+          CSS
+        </button>
+        <div className='btn-group head'>
+        <button 
+          className={`btn btn-success ${activeTab === 'Controller' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('Controller')}>
+          Controller
+        </button>
+        <button 
+          className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('Service')}>
+          RestController
+        </button>
+        <button 
+          className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
+          onClick={() => setActiveTab('Repository')}>
+          Repository
+        </button>
+        </div>
+      </div>
 
-                    <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
+      <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
 {` $(function(){
   var status ={`}<span className="text-danger">{`//상태 객체`}</span>{`
@@ -158,17 +158,54 @@ const Page2DepartmentEdit=()=>{
                 </div>
                 <div className={activeTab === 'Controller' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Controller
+{`@GetMapping("/edit")
+  public String edit(Model model, @RequestParam String departmentCode) {
+  DepartmentDto departmentDto = adminDepartmentDao.selectOne(departmentCode);
+  if(departmentDto == null) throw new TargetNotFoundException();
+  model.addAttribute("departmentDto", departmentDto);
+  return "/WEB-INF/views/admin/department/edit.jsp";
+}
+@PostMapping("/edit")
+  public String edit(@ModelAttribute DepartmentDto departmentDto) {
+  boolean result = adminDepartmentDao.edit(departmentDto);
+  if(result == false) throw new TargetNotFoundException("수정할 학과가 없습니다.");
+  return "redirect:detail?departmentCode="+departmentDto.getDepartmentCode()+ "&message=edit";
+}
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'Service' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Service
+{`@PostMapping("/checkDepartmentName")
+  public boolean checkDepartmentName(@RequestParam String departmentName) {
+  DepartmentDto departmentDto =
+      adminDepartmentDao.selectOneByDepartmentName(departmentName);
+  return departmentDto==null;
+}
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Repository
+{`public boolean edit(DepartmentDto departmentDto) {
+  String sql = "update department set "
+      + "department_name=? "
+      + "where department_code = ?";
+  Object[] data = {
+      departmentDto.getDepartmentName(),
+      departmentDto.getDepartmentCode()
+  };
+  return jdbcTemplate.update(sql, data) > 0;
+}
+
+`}<span className="text-danger">{`//학과명 중복검사`}</span>{`
+public DepartmentDto selectOneByDepartmentName(String departmentName) {
+  String sql="select * from department where department_name=?";
+  Object[] data= {departmentName};
+  List<DepartmentDto>list = jdbcTemplate.query(sql, departmentMapper, data);
+  return list.isEmpty()? null:list.get(0);
+}
+`}
                   </code></pre>
                 </div>
                   </div>

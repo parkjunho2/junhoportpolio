@@ -52,9 +52,9 @@
   border-radius: 8px;
   font-size: 14px;
   overflow: auto !important;
-  min-height: 600px !important;
-  max-height: 600px !important;
-  width: 83% !important;
+  min-height: 650px !important;
+  max-height: 650px !important;
+  width: 85% !important;
 }
 
 .code-editor pre {

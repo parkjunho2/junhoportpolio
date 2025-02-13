@@ -4,8 +4,8 @@ const Page2LectureRemove=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     
     return(<>
-  <div className='row'>
-                  <div className='col-md-6 col-sm-12 ps-4'>
+  <div className='row w-100'>
+                  <div className='col-md-6 col-sm-12'>
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/lectureremove.mp4" type="video/mp4"/>
                   </video>

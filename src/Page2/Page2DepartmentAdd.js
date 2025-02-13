@@ -4,8 +4,8 @@ const Page2DepartmentAdd=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     
     return(<>
-  <div className='row'>
-                  <div className='col-md-6 col-sm-12 ps-4'>
+  <div className='row w-100'>
+                  <div className='col-md-6 col-sm-12'>
                   <video className="videos" autoPlay muted loop playsInline>
                     <source src="/videos/departmentAdd.mp4" type="video/mp4"/>
                   </video>
@@ -205,7 +205,7 @@ $("[name=departmentName]").on("input", function(){`}<span className="text-danger
 </div>            
 <div class="row">
   <table class="table table-horizontal table-hover">
-      <thead>
+  <thead>
   <tr>
     <th>학과코드</th>
     <th>학과명</th>
@@ -315,6 +315,21 @@ $("[name=departmentName]").on("input", function(){`}<span className="text-danger
       };
   jdbcTemplate.update(sql,data);
 }
+`}<span className="text-danger">{`//코드 중복검사`}</span>{`
+public DepartmentDto selectOneByDepartmentCode(String departmentCode) {
+  String sql="select * from department where department_code=?";
+  Object[] data= {departmentCode};
+  List<DepartmentDto>list = jdbcTemplate.query(sql, departmentMapper, data);
+  return list.isEmpty()? null:list.get(0);
+}
+
+`}<span className="text-danger">{`//학과명 중복검사`}</span>{`
+public DepartmentDto selectOneByDepartmentName(String departmentName) {
+  String sql="select * from department where department_name=?";
+  Object[] data= {departmentName};
+  List<DepartmentDto>list = jdbcTemplate.query(sql, departmentMapper, data);
+  return list.isEmpty()? null:list.get(0);
+}  
 
                               `}<span className="text-danger">{`<!-- 목 록 -->`}</span>{`
 `}<span className="text-danger">{`//학과 시스템 관리`}</span>{`
