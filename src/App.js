@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import "fullpage.js/dist/fullpage.min.css";
 import fullpage from 'fullpage.js';
 import Preview from './components/options/Preview'; 
@@ -18,7 +18,18 @@ import Page2LectureRemove from './Page2/Page2LectureRemove';
 
 function App() {
 
-  const fullpageLoading =()=> {
+  const updateMenuActiveState = useCallback((sectionIndex) => {
+    const menuItems = document.querySelectorAll('#menu li');
+    menuItems.forEach(item => {
+      item.classList.remove('active'); // 기존 활성화된 항목 제거
+    });
+    const activeItem = menuItems[sectionIndex];
+    if (activeItem) {
+      activeItem.classList.add('active'); // 새로운 항목에 active 클래스 추가
+    }
+  }, []);
+
+  const fullPageLoading = useCallback(() => {
     new fullpage("#fullpage", {
       CSS3: true,
       sectionsColor: ['#FF6347', '#32CD32', '#1E90FF', '#FFD700'],
@@ -32,27 +43,17 @@ function App() {
       menu: '#menu',
       scrollHorizontally: false,
       anchors: ['Profile', 'JQuery', 'React', 'Extensions'],
-      onLeave: (origin, destination, direction) => {
+      onLeave: (destination) => {
         updateMenuActiveState(destination.index);
       }
     });
-  };
+  }, [updateMenuActiveState]);
 
-  const updateMenuActiveState = (sectionIndex) => {
-    const menuItems = document.querySelectorAll('#menu li');
-    menuItems.forEach(item => {
-      item.classList.remove('active');  // 기존 활성화된 항목 제거
-    });
-    const activeItem = menuItems[sectionIndex];
-    if (activeItem) {
-      activeItem.classList.add('active');  // 새로운 항목에 active 클래스 추가
-    }
-  };
-
+ 
   useEffect(() => {
-    fullpageLoading();
-  }, [fullpageLoading]);
-
+    fullPageLoading();
+  }, [fullPageLoading]); 
+  
   return (
     <>
      <Preview />

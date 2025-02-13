@@ -45,24 +45,24 @@ const [activeTab, setActiveTab] = useState('JS');
 
                     <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-<span className="text-danger">{`<!--카카오 맵API-->`}</span>{`
+{`<!--카카오 맵API-->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d514f39f1a90b1f9acaf2ac1526268a"></script>
 
 $(function(){
-var container = document.querySelector('.kakao-map');`}<span className="text-danger"> //지도생성 태크</span>{`
+var container = document.querySelector('.kakao-map'); //지도생성 태크
 var options = {
-    center: new kakao.maps.LatLng(37.533826, 126.896837),`}<span className="text-danger"> //지도위치 설정</span>{`
-    level: 3 `}<span className="text-danger"> //지도의 확대</span>{`
+    center: new kakao.maps.LatLng(37.533826, 126.896837), //지도위치 설정
+    level: 3  //지도의 확대
 };
 
-window.kakaoMap = new kakao.maps.Map(container, options); `}<span className="text-danger"> //태그와 옵션을 이용하여 카카오 지도를 생성</span>{`
+window.kakaoMap = new kakao.maps.Map(container, options);  //태그와 옵션을 이용하여 카카오 지도를 생성
 kakaoMap.setLevel(3);
-var imageSrc = {pageContext.request.contextPath}/images/education.png", //마커이미지 `}<span className="text-danger"> //마커이미지</span>{`
+var imageSrc = {pageContext.request.contextPath}/images/education.png", //마커이미지 
 imageSize = new kakao.maps.Size(64, 69),
 imageOption = { offset: new kakao.maps.Point(27, 69) };
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption); `}<span className="text-danger"> //마커정보</span>{`
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);  //마커정보
 
-function loadMapList(map){ `}<span className="text-danger"> //클릭한 지도 위치로 이동</span>{`
+function loadMapList(map){  //클릭한 지도 위치로 이동
     var lat, lng;
     $("btn-map").removeClass("red").addClass("black");
     switch(map) {
@@ -96,14 +96,14 @@ function loadMapList(map){ `}<span className="text-danger"> //클릭한 지도 �
         break;
     }
     
-    var location = new kakao.maps.LatLng(lat, lng); `}<span className="text-danger"> //parameter</span>{`
+    var location = new kakao.maps.LatLng(lat, lng);  //parameter
     kakaoMap.setCenter(location);
     if (window.kakaoMapMarker) {
         kakaoMapMarker.setMap(null);
         kakaoMapMarker = null;
     }
     
-    window.kakaoMapMarker = new kakao.maps.Marker({ `}<span className="text-danger">//지도에 파라미터추가</span>{`
+    window.kakaoMapMarker = new kakao.maps.Marker({ //지도에 파라미터추가
         position: location,
         image: markerImage
         });
@@ -114,14 +114,14 @@ function loadMapList(map){ `}<span className="text-danger"> //클릭한 지도 �
 
     loadMapList(map);
 $(".btn-map").click(function(){ 
-    var lat = $(this).attr("data-lat"); `}<span className="text-danger"> //위도 정보</span>{`
-    var lng = $(this).attr("data-lng"); `}<span className="text-danger"> //경도 정보</span>{`
-    $(".btn-map").removeClass("red").addClass("black"); `}<span className="text-danger">//스타일 수정 </span>{`
+    var lat = $(this).attr("data-lat");  //위도 정보
+    var lng = $(this).attr("data-lng");  //경도 정보
+    $(".btn-map").removeClass("red").addClass("black"); //스타일 수정
     $(".btn-map i").removeClass("red").addClass("black");
     $(this).removeClass("black").addClass("red");
     $(this).find('i').removeClass("black").addClass("red");
 
-    var location = new kakao.maps.LatLng(lat, lng); `}<span className="text-danger"></span>{`
+    var location = new kakao.maps.LatLng(lat, lng); //위취에 스타일 적용
     kakaoMap.setLevel(3);
     kakaoMap.setCenter(location);
     if(window.kakaoMapMarker){
@@ -132,7 +132,7 @@ $(".btn-map").click(function(){
     position:location,
     image: markerImage
     });
-    kakaoMapMarker.setMap(kakaoMap); `}<span className="text-danger">//지도에 마커 설정</span>{`
+    kakaoMapMarker.setMap(kakaoMap); //지도에 마커 설정
 });
 });
 `}
@@ -141,7 +141,7 @@ $(".btn-map").click(function(){
                 <div className={activeTab === 'HTML' ? 'code-editor' : 'd-none'}>
                   <pre><code>
 {`<div class="container omega px-10 mx-20 my-20">
-<div class=" center"> `}<span className="text-danger"> //모달</span>{`
+<div class=" center">  //모달
   <h3 class="my-0 underline">캠퍼스 정보</h3>
 </div>
 <div class="mt-10 center">
@@ -163,11 +163,12 @@ $(".btn-map").click(function(){
   </a>
 </div>
 </div>
-<div class="kakao-map"></div> `}<span className="text-danger"> //화면출력<br/></span>
-<span className="text-danger">{`<!-- footer 추가 -->`}</span><br/>
-{`<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>`}<br/>
-{`    
-<div class="w-25">`}<span className="text-danger">{` //Footer Page`}</span>{`
+<div class="kakao-map"></div>  //화면출력
+
+<!-- footer 추가 -->
+<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+    
+<div class="w-25"> //Footer Page
   <div class="row center">
       <h3>캠퍼스 정보</h3>
       <div>
@@ -238,7 +239,7 @@ $(".btn-map").click(function(){
 @RequestMapping("/home")
 public class HomeController {
   
-  @RequestMapping("/map")`}<span className="text-danger"> //카카오맵</span>{`
+  @RequestMapping("/map") //카카오맵
   public String map() {
     return "/WEB-INF/views/home/map.jsp";
   }

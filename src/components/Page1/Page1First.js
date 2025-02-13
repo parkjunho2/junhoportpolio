@@ -1,5 +1,4 @@
 import { Modal } from 'bootstrap';
-import { FaGithub } from "react-icons/fa6";
 import { useCallback, useRef } from 'react';
 
 
