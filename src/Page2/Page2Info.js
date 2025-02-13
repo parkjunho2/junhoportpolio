@@ -3,10 +3,10 @@ import { useState } from "react";
 const Page2Info=()=>{
     const [activeTab, setActiveTab] = useState('JS');
     return(<>
-    <div className="row align-items-start w-100">
+    <div className="row w-100">
         <div className='col-md-6 col-sm-12 ps-4'>    
-            <pre className='text-black' style={{ fontSize: '19px', fontWeight: 'bold' ,fontFamily: 'sans-serif' }}>{`
-1      {
+            <pre className='text-black bg-gray-200 ps-1' style={{ fontSize: '19px', fontWeight: 'bold' ,fontFamily: 'sans-serif' }}>
+{`1      {
 2           "BackEnd" : {
 3                "OS" : "Window10" ,                                            
 4                "Language"  : "Java" ,
@@ -35,7 +35,7 @@ const Page2Info=()=>{
 `}</pre>
     </div>
     <div className="col-md-6 col-sm-12">
-                <h1 className='text-primary'>공통 옵션</h1>
+                <h1 className='text-primary mb-0'>공통 옵션</h1>
                 <div className='btn-group head'>
                     <button 
                       className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 

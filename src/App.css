@@ -169,3 +169,6 @@ border: none;
 #menu li.active a:hover::after {
   width: 100%; /* 호버 시에도 활성화된 항목은 밑줄이 유지되도록 설정 */
 }
+.bg-gray-200 {
+  background-color: var(--bs-gray-400) !important;
+}
