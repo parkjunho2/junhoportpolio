@@ -40,7 +40,7 @@ const Page1First=()=>{
                   <div>사용하는 언어</div>
 
                   <h3 className='mt-5'>Knowledge</h3>
-                  <div>다룰줄 아는 어플리케이션을 적어주세요</div>
+                  <div>다룰줄 아는 어플리케이션을 적어주세요.</div>
                   
                   <div className='row mt-5'>
                   <a href='https://naver.com' className='btn btn-outline-light mx-3' style={{width:"100px"}}>깃허브</a>
