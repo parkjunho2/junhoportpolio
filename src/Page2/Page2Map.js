@@ -17,7 +17,7 @@ const [activeTab, setActiveTab] = useState('JS');
                   권장하는 guide에 맞게 코드를 작성하여 추가적으로 버튼과 마커에 시각적인 디자인을 적용했습니다.
                   </h4>
               </div>
-                  <div className='col-md-6 col-sm-12'>
+                  <div className='col-md-6 col-sm-12 ps-4'>
                   <div className='btn-group head'>
                     <button 
                       className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 

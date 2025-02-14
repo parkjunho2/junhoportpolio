@@ -13,7 +13,7 @@ const Page2First=()=>{
                     </a>
                     </h2>
                    </div>         
-                  <div className='row col-md-6 col-sm-12 back-ground-white'>
+                  <div className='row col-md-6 col-sm-12 ps-4'>
                     <h1 className='mb-3'><span className='text-warning me-5'>대학교 홈페이지</span>
                     </h1>
                     <h1><span className='text-warning me-3'>참여인원 </span>6명</h1>

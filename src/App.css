@@ -50,11 +50,19 @@
   color: #d4d4d4;
   padding: 2%;
   border-radius: 8px;
-  font-size: 14px;
   overflow: auto !important;
   min-height: 650px !important;
   max-height: 650px !important;
   width: 85% !important;
+}
+
+@media (max-width: 768px) {
+  .code-editor{
+    width: 100% !important;
+  }
+  .btn-success, .btn-primary{
+    font-size: 2.5vw !important; 
+  }
 }
 
 .code-editor pre {
@@ -171,4 +179,16 @@ border: none;
 }
 .bg-gray-200 {
   background-color: var(--bs-gray-400) !important;
+}
+
+.swiper {
+  width: 70%;
+  height: 70%;
+  align-items: center !important;
+  justify-content: start !important;
+}
+
+.swiper-image {
+  max-width: 100%;
+  max-height: 100%;
 }

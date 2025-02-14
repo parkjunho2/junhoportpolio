@@ -17,7 +17,7 @@ const Page2LectureRemove=()=>{
                     MVC 패턴 사용하여 RequestParam 으로 정보 출력
                     </h4>
               </div>
-                  <div className='col-md-6 col-sm-12'>
+                  <div className='col-md-6 col-sm-12 ps-4'>
                   <div className='btn-group head'>
                     <button 
                       className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 

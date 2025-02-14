@@ -14,6 +14,10 @@ import Page2DepartmentRemove from './Page2/Page2DepartmentRemove';
 import Page2LectureAdd from './Page2/Page2LectureAdd';
 import Page2LectureEdit from './Page2/Page2LectureEdit';
 import Page2LectureRemove from './Page2/Page2LectureRemove';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 function App() {
@@ -32,6 +36,8 @@ function App() {
       menu: '#menu',
       scrollHorizontally: false,
       anchors: ['Profile', 'JQuery', 'React', 'Extensions'],
+      normalScrollElements: '.swiper',
+      touchMove: false
     });
   }, []);
 
@@ -96,7 +102,7 @@ function App() {
           </div>
 
           <div className="section page4" data-anchor="Extensions">
-          
+            <h1 className='text-center'>UpLading Soon...</h1>
           </div>
 
         </div>

@@ -1,10 +1,11 @@
 import { Modal } from 'bootstrap';
 import { useCallback, useRef } from 'react';
+import SwiperComponent from '../options/SwiperComponent';
 
 
 const Page1First=()=>{
-
     const modal = useRef();
+
     const openModal = useCallback(()=>{
         const tag = Modal.getOrCreateInstance(modal.current);
         tag.show();
@@ -29,20 +30,18 @@ const Page1First=()=>{
             </div>
             </div>
 
-          <div className='row'>
-            <div className='page1-left col-md-6 col-sm-12 ps-5'>
+          <div className='row w-100'>
+            <div className='col-md-6 col-sm-12 ps-5'>
                   <h1>프로필</h1>
                   <h3>간단한 자기소개 해주세요간단한</h3>
                   <h3>Force</h3>
                   <h4>사용하는 언어</h4>
                   <h3>Knowledge</h3>
                   <h4>다룰줄 아는 어플리케이션을 적어주세요</h4>
-                  <a href='https://naver.com' className='btn btn-outline-light mx-3' style={{width:"100px"}}>깃허브</a>
-                  <button className='btn btn-outline-light mx-3' style={{width:"100px"}}
-                  onClick={openModal}>이메일</button>
             </div>
-            <div className='page1-right col-md-6 col-sm-12'>
-                  <img src='/images/profile.png' alt="" />
+            
+            <div className='col-md-6 col-sm-12 pe-5'>
+            <SwiperComponent/> 
             </div>
           </div>
     </>)
