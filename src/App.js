@@ -21,7 +21,9 @@ import Page3PaymentStatus from './Page3/Page3PaymentStatus';
 import Page3PaymentAllList from './Page3/Page3PaymentAllList';
 import Page3PaymentDetail from './Page3/Page3PaymentDetail';
 import Page3PaymentGrape from './Page3/Page3PaymentGrape';
-
+import Extensions1 from './Page4/Extension1';
+import Extensions2 from './Page4/Extesions2';
+import Element from './components/options/Element';
 
 function App() {
 
@@ -50,6 +52,7 @@ function App() {
   
   return (
     <>
+    <Element/>
      <Preview />
       <Menu/>        
         <div id="fullpage">
@@ -111,7 +114,15 @@ function App() {
           </div>
 
           <div className="section page4" data-anchor="Extensions">
-            <h1 className='text-center'>UpLading Soon...</h1>
+              <div className='slide'>
+                <Extensions1/>
+              </div>
+              <div className='slide'>
+                <Extensions2/>
+              </div>
+              <div className='slide'>
+                 <h1 className='text-center'>UpLading Soon...</h1>
+              </div>
           </div>
 
         </div>

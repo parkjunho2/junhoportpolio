@@ -3,9 +3,9 @@ const Preview=()=>{
 
     document.addEventListener('mouseover', (event) => {
         const target = event.target;
-     const link = target.closest('#menu li>a')|| target.closest('#link-a');;
+     const link = target.closest('#menu li>a')|| target.closest('#link-a');
      if (link) {
-       const url = link.href || link.to; // 대상 URL
+       const url = link.href; // 대상 URL
        if (!url) return;
    
            // 기존에 열린 모달 제거
