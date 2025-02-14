@@ -44,7 +44,7 @@ const Page2LectureAdd=()=>{
                     <button 
                       className={`btn btn-success ${activeTab === 'Service' ? 'active' : ''}`} 
                       onClick={() => setActiveTab('Service')}>
-                      Service
+                      RestController
                     </button>
                     <button 
                       className={`btn btn-success ${activeTab === 'Repository' ? 'active' : ''}`} 
@@ -432,7 +432,45 @@ $("[name]").trigger("input").trigger("blur").trigger("click");
                 </div>
                 <div className={activeTab === 'Service' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-                    Service
+{`@RestController
+@RequestMapping("/rest/admin/lecture")
+public class AdminLectureRestController {
+  @Autowired
+  private AdminLectureDao adminLectureDao;
+  @Autowired
+  private ProfessorDao professorDao;
+  @Autowired
+  private DepartmentDao departmentDao;
+  `}<span className="text-danger">{`//코드 중복 검사`}</span>{` 
+@PostMapping("/checkLectureCode")
+  public boolean checkLectureCode(@RequestParam String lectureCode) {
+    LectureDto lectureDto =
+        adminLectureDao.selectOneByLectureCode(lectureCode);
+    return lectureDto==null;
+  }
+`}<span className="text-danger">{`//과목코드 DB에 있는것만 검사`}</span>{` 
+@PostMapping("/checkLectureDepartment")
+  public boolean checkLectureDepartment(@RequestParam String lectureDepartment) {
+    DepartmentDto lectureDto =
+        departmentDao.selectOne(lectureDepartment);
+    return lectureDto!=null; 
+  }
+`}<span className="text-danger">{`//교수코드 DB에 있는것만 검사`}</span>{` 
+@PostMapping("/checkLectureProfessor")
+  public boolean checkLectureProfessor(@RequestParam String lectureProfessor) {
+    ProfessorDto lectureDto =
+        professorDao.selectOne(lectureProfessor);
+    return lectureDto!=null; 
+  }
+`}<span className="text-danger">{`//강의명 중복검사`}</span>{` 
+@PostMapping("/checkLectureName")
+  public boolean checkLectureName(@RequestParam String lectureName) {
+    LectureDto lectureDto =
+        adminLectureDao.selectOneByLectureName(lectureName);
+    return lectureDto==null; 
+  }
+}
+`}
                   </code></pre>
                 </div>
                 <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
