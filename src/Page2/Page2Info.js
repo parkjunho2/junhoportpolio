@@ -7,27 +7,27 @@ const Page2Info=()=>{
         <div className='col-md-6 col-sm-12 ps-4'>    
             <pre className='text-black bg-gray-200 ps-1' style={{ fontSize: '19px', fontWeight: 'bold' ,fontFamily: 'sans-serif' }}>
 {`1      {
-2           "BackEnd" : {
-3                "OS" : "Window10" ,                                            
-4                "Language"  : "Java" ,
-5               "IDE" : [
-6                       { "Eclipse" , "VSCode" }
-7                    ] ,
-8                "FrameWork" : "Spring Boot" ,
-9               "RDBMS" : { "Oracle11g" : "DBeaver" } ,
-10              "SQLMapper" : "JDBCTemplate" ,
+2     "BackEnd" : {
+3                 "OS" : "Window10" ,                                            
+4           "Language" : "Java" ,
+5                "IDE" : [
+6                        { "Eclipse" , "VSCode" }
+7                       ] ,
+8          "FrameWork" : "Spring Boot" ,
+9              "RDBMS" : { "Oracle11g" : "DBeaver" } ,
+10         "SQLMapper" : "JDBCTemplate" ,
 11               "WAS" : "Apache Tomcat" ,
-12              "Library" : [
+12           "Library" : [
 13                   { "Spring Web" ,  "Spring Boot DevTools" ,  "Oracle Driver" ,  
 14                   "Lombok", "Java Mail Sender", "Spring Security", "Spring Data JDBC"
 15                      }
 16                   ]
 17              },
-18         "FrontEnd" : {
+18   "FrontEnd" : {
 19              "UI" :  { "MVC" : "JSP" } ,
 20              "JS" : { "EC5"  : "JQuery" } ,
 21             "API" : "KakaoMap" ,
-22              "CDN" : [
+22             "CDN" : [
 23                        { "Moment" ,  "JQuery",  "SweetAlert2" }
 24               ]
 25             }

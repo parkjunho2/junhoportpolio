@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import "fullpage.js/dist/fullpage.min.css";
 import fullpage from 'fullpage.js';
 import Preview from './components/options/Preview'; 
-import Page1First from './components/Page1/Page1First';
+import Page1First from './Page1/Page1First';
 import Menu from './components/options/Menu';
 import Page2DepartmentAdd from './Page2/Page2DepartmentAdd';
 import Page2First from './Page2/Page2First';
@@ -14,6 +14,13 @@ import Page2DepartmentRemove from './Page2/Page2DepartmentRemove';
 import Page2LectureAdd from './Page2/Page2LectureAdd';
 import Page2LectureEdit from './Page2/Page2LectureEdit';
 import Page2LectureRemove from './Page2/Page2LectureRemove';
+import Page3First from './Page3/Page3First';
+import Page3Info from './Page3/Page3Info';
+import Page3Payment from './Page3/Page3Payment';
+import Page3PaymentStatus from './Page3/Page3PaymentStatus';
+import Page3PaymentAllList from './Page3/Page3PaymentAllList';
+import Page3PaymentDetail from './Page3/Page3PaymentDetail';
+import Page3PaymentGrape from './Page3/Page3PaymentGrape';
 
 
 function App() {
@@ -81,20 +88,26 @@ function App() {
         
           <div className="section page3" data-anchor="React">
               <div className='slide'>
-                
+                <Page3First/>
               </div>
               <div className='slide'>
-              
+                <Page3Info/>
               </div>
               <div className='slide'>
-              
+                <Page3Payment/>
               </div>
               <div className='slide'>
-              
+                <Page3PaymentStatus/>
               </div>
               <div className='slide'>
-              
-            </div>
+                <Page3PaymentAllList/>
+              </div>
+              <div className='slide'>
+                <Page3PaymentDetail/>
+              </div>
+              <div className='slide'>
+                <Page3PaymentGrape/>
+              </div>
           </div>
 
           <div className="section page4" data-anchor="Extensions">

@@ -1,4 +1,4 @@
-import SwiperComponent from '../options/SwiperComponent';
+import SwiperComponent from '../components/options/SwiperComponent';
 
 
 const Page1First=()=>{
