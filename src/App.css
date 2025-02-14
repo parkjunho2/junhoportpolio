@@ -58,6 +58,7 @@
 @media (max-width: 768px) {
   .col-md-6.col-sm-12.ps-4{
     margin-top: 2vw !important;
+    margin-bottom: 2vw !important;
   }
   .code-editor{
     width: 100% !important;

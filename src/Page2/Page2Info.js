@@ -35,7 +35,7 @@ const Page2Info=()=>{
 `}</pre>
     </div>
     <div className="col-md-6 col-sm-12 ps-4">
-                <h1 className='text-primary mb-0'>공통 옵션</h1>
+                <h1 className='text-primary mb-0'>개발 환경</h1>
                 <div className='btn-group head'>
                     <button 
                       className={`btn btn-primary ${activeTab === 'JS' ? 'active' : ''}`} 

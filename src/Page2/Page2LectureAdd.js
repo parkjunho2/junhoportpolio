@@ -283,7 +283,30 @@ $(".check-form").submit(function(){
 $("[name]").trigger("input").trigger("blur").trigger("click");
       return status.ok();
     });
-});		
+});
+
+                        `}<span className="text-danger">{` <!-- 목 록 -->`}</span>{` 
+
+function showMessage(message) {`}<span className="text-danger">{` //alert`}</span>{` 
+	if (message === 'remove') 
+		loadCheck();
+	}
+$(document).ready(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var message = urlParams.get('message');
+    if (message) {
+        showMessage(message); 
+    }
+});
+function loadCheck() {
+	 Swal.fire({
+     icon: 'success',
+     iconColor: "#6695C4",
+     title: '삭제 완료.',
+     showConfirmButton: false,
+     timer: 1500         
+	 });
+};	
 `}
                   </code></pre>
                 </div>
@@ -397,6 +420,61 @@ $("[name]").trigger("input").trigger("blur").trigger("click");
 </div>
 </div>
 </form>
+
+
+                            `}<span className="text-danger">{`<!-- 목 록 -->`}</span>{` 
+
+<div class="row center">
+  <form action="list" method="get" autocomplete="off">
+      <!-- 검색창 --> 
+<select class="field" name="column">
+  <option value="department_name" <c:if test="{param.column == 'department_name'}">selected</c:if>>전공(학과)</option>
+  <option value="member_name" <c:if test="{param.column == 'member_name'}">selected</c:if>>교수명</option>
+  <option value="lecture_type" <c:if test="{param.column == 'lecture_type'}">selected</c:if>>분류</option>
+  <option value="lecture_name" <c:if test="{param.column == 'lecture_name'}">selected</c:if>>강의명</option>
+</select>
+    <input type="search" name="keyword" value="{param.keyword}" class="field" placeholder="검색어">
+    <button class="btn btn-positive" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+<a href="add" class="btn btn-neutral"><i class="fa-regular fa-square-plus"></i> 강의개설</a>
+  </form>
+</div>
+            
+<div class="row">
+    <table class="table table-horizontal table-hover w-100">
+        <thead>
+          <tr>
+            <th>강의코드</th>
+            <th>전공(학과)</th>
+            <th>교수명</th>
+            <th>분류</th>
+            <th>강의명</th>
+            <th>시작시간</th>
+            <th>수업시간</th>
+            <th>강의요일</th>
+            <th>강의실</th>
+            <th>정원</th>
+          </tr>
+</thead>
+<tbody>
+    <c:forEach var="lectureMemberVO" items="{lectureList}">
+        <tr onclick="location.href='detail?lectureCode={lectureMemberVO.lectureCode}'" style="cursor: pointer;">
+            <td>{lectureMemberVO.lectureCode}</td>
+            <td>{lectureMemberVO.departmentName}</td>
+            <td>{lectureMemberVO.memberName}</td>
+            <td>{lectureMemberVO.lectureType}</td>
+            <td>{lectureMemberVO.lectureName}</td>
+            <td>{lectureMemberVO.lectureTime}</td>
+            <td>{lectureMemberVO.lectureDuration}</td>
+            <td>{lectureMemberVO.lectureDay}</td>
+            <td>{lectureMemberVO.lectureRoom}</td>
+            <td>{lectureMemberVO.lectureCount}</td>
+          </tr>
+      </c:forEach>
+    </tbody>
+  </table>
+  <jsp:include page="/WEB-INF/views/template/navigator.jsp"></jsp:include> <!-- navigator 추가 -->
+</div>
+</div>
 `}
                   </code></pre>
                 </div>
@@ -418,7 +496,9 @@ $("[name]").trigger("input").trigger("blur").trigger("click");
                 </div>
                 <div className={activeTab === 'Controller' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-{`@GetMapping("/add")
+{`
+`}<span className="text-danger">{`<!-- 등 록 -->`}</span>{` 
+@GetMapping("/add")
   public String add() {
     return "/WEB-INF/views/admin/lecture/add.jsp";
   }
@@ -427,6 +507,47 @@ $("[name]").trigger("input").trigger("blur").trigger("click");
     adminLectureDao.add(lectureDto);
     return "redirect:detail?lectureCode="+lectureDto.getLectureCode();
 }
+`}<span className="text-danger">{`//강의 코드 중복검사`}</span>{` 
+public LectureDto selectOneByLectureCode(String lectureCode) {
+  String sql="select * from lecture where lecture_code=?";
+  Object[] data= {lectureCode};
+  List<LectureDto>list = jdbcTemplate.query(sql,  lectureMapper, data);
+  return list.isEmpty()? null:list.get(0);
+}
+
+`}<span className="text-danger">{`//학과 코드 중복검사`}</span>{` 
+    public LectureDto selectOneByLectureDepartment(String lectureDepartment) {
+      String sql="select * from department where department_code=?";
+      Object[] data= {lectureDepartment};
+      List<LectureDto>list = jdbcTemplate.query(sql,  lectureMapper, data);
+      return list.isEmpty()? null:list.get(0);
+    }
+    
+`}<span className="text-danger">{`//교수 코드 중복검사`}</span>{` 
+    public LectureDto selectOneByLectureProfessor(String lectureProfessor) {
+      String sql="select * from professor where professor_code=?";
+      Object[] data= {lectureProfessor};
+      List<LectureDto>list = jdbcTemplate.query(sql,  lectureMapper, data);
+      return list.isEmpty()? null:list.get(0);
+    }				
+
+`}<span className="text-danger">{`//강의명 코드 중복검사`}</span>{` 
+    public LectureDto selectOneByLectureName(String lectureName) {
+      String sql="select * from lecture where lecture_name=?";
+      Object[] data= {lectureName};
+      List<LectureDto>list = jdbcTemplate.query(sql,  lectureMapper, data);
+      return list.isEmpty()? null:list.get(0);
+    }					
+
+
+`}<span className="text-danger">{`<!-- 목 록 -->`}</span>{` 
+@RequestMapping("list")
+  public String list(@ModelAttribute("pageVO") PageVO pageVO, Model model) {
+  model.addAttribute("lectureList", lectureDao.selectListByPaging(pageVO));
+  int count = lectureDao.countByPaging(pageVO);
+  pageVO.setCount(count);
+  return "/WEB-INF/views/admin/lecture/list.jsp";
+	}
 `}
                   </code></pre>
                 </div>
@@ -441,7 +562,7 @@ public class AdminLectureRestController {
   private ProfessorDao professorDao;
   @Autowired
   private DepartmentDao departmentDao;
-  `}<span className="text-danger">{`//코드 중복 검사`}</span>{` 
+`}<span className="text-danger">{`//코드 중복 검사`}</span>{` 
 @PostMapping("/checkLectureCode")
   public boolean checkLectureCode(@RequestParam String lectureCode) {
     LectureDto lectureDto =
@@ -475,7 +596,8 @@ public class AdminLectureRestController {
                 </div>
                 <div className={activeTab === 'Repository' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-{`public void add(LectureDto lectureDto) {
+{``}<span className="text-danger">{`<!-- 등 록 -->`}</span>{` 
+public void add(LectureDto lectureDto) {
   String sql = "insert into lecture("
       + "lecture_code, lecture_department, lecture_professor, "
       + "lecture_type, lecture_name, lecture_time, "
@@ -490,6 +612,12 @@ public class AdminLectureRestController {
       };
   jdbcTemplate.update(sql,data);		
   }
+
+`}<span className="text-danger">{`<!-- 목 록 -->`}</span>{` 
+public List<LectureDto>selectList(){
+  String sql = "select * from lecture order by lecture_code asc";
+  return jdbcTemplate.query(sql, lectureMapper);
+}  
 `}
                   </code></pre>
                 </div>

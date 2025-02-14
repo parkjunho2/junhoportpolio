@@ -45,7 +45,7 @@ const [activeTab, setActiveTab] = useState('JS');
 
                     <div className={activeTab === 'JS' ? 'code-editor' : 'd-none'}>
                   <pre><code>
-{``}<span className="text-danger">{` <!--카카오 맵API--> `}</span>{`
+{``}<span className="text-danger">{`<!--카카오 맵API--> `}</span>{`
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d514f39f1a90b1f9acaf2ac1526268a"></script>
 
 $(function(){
