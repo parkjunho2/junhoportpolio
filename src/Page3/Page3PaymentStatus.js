@@ -7,7 +7,7 @@ const Page3PaymentStatus=()=>{
   <div className='row w-100'>
                   <div className='col-md-6 col-sm-12 ps-4'>
                   <video className="videos" autoPlay muted loop playsInline>
-                    <source src="/videos/departmentAdd.mp4" type="video/mp4"/>
+                    <source src="/videos/status.mp4" type="video/mp4"/>
                   </video>
                   <h1 className="text-warning mt-4">결제 상태</h1>
                     <h4>

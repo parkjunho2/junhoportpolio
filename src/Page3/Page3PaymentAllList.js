@@ -7,7 +7,7 @@ const Page3PaymentAllList=()=>{
   <div className='row w-100'>
                   <div className='col-md-6 col-sm-12 ps-4'>
                   <video className="videos" autoPlay muted loop playsInline>
-                    <source src="/videos/departmentAdd.mp4" type="video/mp4"/>
+                    <source src="/videos/paymentList.mp4" type="video/mp4"/>
                   </video>
                   <h1 className="text-warning mt-4">결제 목록</h1>
                     <h4>
