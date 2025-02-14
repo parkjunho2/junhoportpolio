@@ -203,7 +203,7 @@ const Page2LectureAdd=()=>{
   
  `}<span className="text-danger">{`//강의명 입력창 검사`}</span>{` 
 $("[name=lectureName]").blur(function(){
-    var regex= /^[가-힣A-Za-z()\s]{1,10}$/;`}<span className="text-danger">{`//형식검사`}</span>{` 
+    var regex= /^[가-힣A-Za-z()\s]{1,10}$/;`}<span className="text-danger">{` //형식검사`}</span>{` 
     var lectureName = $(this).val();
     var isValid= regex.test(lectureName);
       $(this).removeClass("success fail")

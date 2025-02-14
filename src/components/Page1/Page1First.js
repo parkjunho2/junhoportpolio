@@ -1,35 +1,9 @@
-import { Modal } from 'bootstrap';
-import { useCallback, useRef } from 'react';
 import SwiperComponent from '../options/SwiperComponent';
 
 
 const Page1First=()=>{
-    const modal = useRef();
-
-    const openModal = useCallback(()=>{
-        const tag = Modal.getOrCreateInstance(modal.current);
-        tag.show();
-    },[modal]);
-  
-    const closeModal = useCallback(()=>{
-        const tag = Modal.getInstance(modal.current);
-        tag.hide();
-    },[modal]);
 
     return(<>
-         <div className="modal" tabIndex="-1" ref={modal}>
-            <div className="modal-dialog">
-                <div className="modal-content">
-                <div className="modal-body">
-                  <div className='center'>pp01024689860@gmail.com</div>
-                </div>
-                <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
-                </div>
-                </div>
-            </div>
-            </div>
-
           <div className='row w-100'>
             <div className='col-md-6 col-sm-12 ps-5'>
                   <h1>프로필</h1>
