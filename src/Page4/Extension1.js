@@ -1,6 +1,5 @@
 import { LuOption } from "react-icons/lu";
 import { MdKeyboardTab } from "react-icons/md";
-import { ImWindows8 } from "react-icons/im";
 import { FaApple } from "react-icons/fa";
 const Extensions1=()=>{
 
