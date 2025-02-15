@@ -11,8 +11,7 @@ const Extensions1=()=>{
                     <source src="/videos/extension1.mp4" type="video/mp4"/>
                   </video>
                     <h2 className="text-center mt-5">
-                    <FaApple /><LuOption className="text-primary"/><span className="text-primary">+</span><MdKeyboardTab className="text-primary me-5" /> 
-                    or <span className="text-primary ms-5">Alt+TAB</span><ImWindows8 /> 
+                    <FaApple className="text-light me-2"/><LuOption className="text-primary"/><span className="text-primary">+</span><MdKeyboardTab className="text-primary" />
                      <br/><br/> Elements Label 번호 Input창에 입력 후 Enter
                     </h2>
                    </div>         
