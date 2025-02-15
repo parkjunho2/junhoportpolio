@@ -11,10 +11,10 @@ const Menu=()=>{
             <a href="https://homeweb.kro.kr" className='menu-item'>EC6 React DNS</a>
           </li>
           <li data-menuanchor="Extensions">
-            <a href="https://topguntravel.shop" className='menu-item'>Extensions DNS </a>
+            <a href="#Extensions" className='menu-item'>Extensions DNS </a>
           </li>
           <li data-menuanchor="Profile">
-            <a href="https://github.com/parkjunho2/pp01024689860" className='menu-item'><FaGithub size={30} /></a>
+            <a href="http://webentity.kro.kr" className='menu-item'><FaGithub size={30} /></a>
           </li>
         </ul>
     </>)

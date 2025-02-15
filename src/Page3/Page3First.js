@@ -21,9 +21,9 @@ const Page3First=()=>{
                     <h1><span className='text-warning me-3'>작업기간 </span> 24.10.17 - 24.11.06 (2주)</h1>
                     <h1 className='text-warning mt-2'>담당 업무</h1>
                     <h1 className='row'>
-                      <div className='col'>좌석생성</div>
-                      <div className='col'>매출내역</div>
-                      <div className='col'>결제</div>
+                      <div className='col nowrap'>좌석생성</div>
+                      <div className='col nowrap'>매출내역</div>
+                      <div className='col nowrap'>결제</div>
                     </h1>  
                     <h2 className='mt-4 text-warning'>주요기술 요약</h2>
                     <h4>JSON 형식의 RestFulAPI를 서버에서 수신하여<br/>
