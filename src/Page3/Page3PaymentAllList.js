@@ -11,10 +11,9 @@ const Page3PaymentAllList=()=>{
                   </video>
                   <h1 className="text-warning mt-4">결제 목록</h1>
                     <h4>
-                    검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
-                    비동기 통신사용 하여 입력 상태 유무 검사
-                    RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
-                    MVC 패턴 사용하여 RequestParam 으로 정보 출력
+                    Recoil을 사용하여 회원 정보를 가져오고 최신순으로 데이터를 불러오도록 하였습니다.<br/><br/>
+                    등록된 데이터에 정보가 비어있으면 입력창을 생성하여 데이터를 업데이트할 수 있도록 했습니다.<br/> 
+                    결제 시 함께 정보를 등록한 경우, 입력한 정보 데이터를 모두 불러오도록 하였습니다.
                     </h4>
               </div>
                   <div className='col-md-6 col-sm-12 ps-4'>

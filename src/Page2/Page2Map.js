@@ -13,8 +13,9 @@ const [activeTab, setActiveTab] = useState('JS');
                   <h1 className="text-primary mt-4">지도 페이지</h1>
                   <h4>
                   KakaoMap API를 호스트에 IPv4 등록 후 
-                  Request API키를 호출하여
-                  권장하는 guide에 맞게 코드를 작성하여 추가적으로 버튼과 마커에 시각적인 디자인을 적용했습니다.
+                  Request API키를 호출하여<br/>
+                  권장하는 guide에 맞게 코드를 작성하여 추가적으로 버튼과 마커에<br/>
+                  시각적인 디자인을 적용했습니다.
                   </h4>
               </div>
                   <div className='col-md-6 col-sm-12 ps-4'>

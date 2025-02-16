@@ -11,10 +11,9 @@ const Page3PaymentGrape=()=>{
                   </video>
                   <h1 className="text-warning mt-4">매출 내역</h1>
                     <h4>
-                    검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
-                    비동기 통신사용 하여 입력 상태 유무 검사
-                    RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
-                    MVC 패턴 사용하여 RequestParam 으로 정보 출력
+                    Chart.js의 npm 라이브러리를 사용하여 Recoil을 통해 아이디를 조회<br/><br/>
+                    해당 데이터를 JSON 형식으로 통신하여 Chart.js 가이드에 맞게 입력 후<br/>
+                    차트를 시각적 디자인을 추가했습니다.
                     </h4>
               </div>
                   <div className='col-md-6 col-sm-12 ps-4'>

@@ -200,3 +200,61 @@ border: none;
 .nowrap {
   white-space: nowrap;
 }
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flip-box {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px; /* 3D 효과 */
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-box:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 앞면 (이미지) */
+.flip-front {
+  background-color: white;
+}
+
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 뒷면 (글씨) */
+.flip-back {
+  background-color: #fff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transform: rotateY(180deg);
+}

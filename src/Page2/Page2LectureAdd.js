@@ -12,10 +12,10 @@ const Page2LectureAdd=()=>{
                   </video>
                   <h1 className="text-primary mt-4">강의 등록,목록</h1>
                     <h4>
-                    검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
-                    비동기 통신사용 하여 입력 상태 유무 검사
-                    RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
-                    MVC 패턴 사용하여 RequestParam 으로 정보 출력
+                    목록 param으로 column, keyword변수의 query문에 instr 사용하여 검색기능 사용<br/><br/>
+                    Input창에 특정창 모두 입력하거나 하지 않았을때만 적용되도록 조건부 사용<br/>
+                    등록 전 정규표현식 유무 검사 등록버튼에 상태객체 검사 후<br/>
+                    RestController @CrossOrigin연결하여 DBMS 비동기통신 합니다.
                     </h4>
               </div>
                   <div className='col-md-6 col-sm-12 ps-4'>

@@ -11,10 +11,11 @@ const Page3Payment=()=>{
                   </video>
                   <h1 className="text-warning mt-4">항공편 좌석생성, 결제</h1>
                     <h4>
-                    검색기능 column , keyword 두 개의 조건이 만족하면 검색 두 개의 조건 불일치 모든 항목 asc순서 query문 사용
-                    비동기 통신사용 하여 입력 상태 유무 검사
-                    RestController CrossOrigin연결하여 DBMS 중복검사 비동기통신 데이터 검사
-                    MVC 패턴 사용하여 RequestParam 으로 정보 출력
+                    항공편이 최종 승인이 이루어지면, 좌석 데이터가 생성되도록 Service를 작성하여 로직을 처리<br/><br/>
+                    결제를 처리하기 위해 카카오페이 가이드에 필요한 key와 value 값을 받아<br/>
+                    결제가 정상적으로 이루어지도록 서비스 로직을 구현하였습니다.<br/>
+                    결제와 관련된 API 통신 디버깅은 Spring Boot Test를 사용하여 검사<br/>
+                    RESTful API 문서화 SpringDoc Swagger UI를 사용했습니다.
                     </h4>
               </div>
                   <div className='col-md-6 col-sm-12 ps-4'>
@@ -759,33 +760,6 @@ public PayApproveResponseVO approve(PayApproveRequestVO request) throws URISynta
   //#6
   PayApproveResponseVO response = template.postForObject(uri, entity, PayApproveResponseVO.class);
   return response;
-}
-
-`}<span className="text-danger">{` //결제 조회(order)`}</span>{`
-public PayOrderResponseVO order(PayOrderRequestVO request) throws URISyntaxException {
-  URI uri = new URI("https://open-api.kakaopay.com/online/v1/payment/order");
-  Map<String, String> body = new HashMap<>();
-  body.put("cid", payProperties.getCid());
-  body.put("tid", request.getTid());
-  HttpEntity entity = new HttpEntity(body, headers);
-  PayOrderResponseVO response=
-      template.postForObject(uri, entity, PayOrderResponseVO.class);
-  return response;
-}
-
-`}<span className="text-danger">{` //결제 취소(cancel)`}</span>{`
-public PayCancelResponseVO cancel(PayCancelRequestVO request) throws URISyntaxException {
-  URI uri = new URI("https://open-api.kakaopay.com/online/v1/payment/cancel");
-  Map<String, String> body = new HashMap<>();
-  body.put("cid", payProperties.getCid());
-  body.put("tid", request.getTid());
-  body.put("cancel_amount", String.valueOf(request.getCancelAmount()));
-  body.put("cancel_tax_free_amount", String.valueOf(request.getCancelTaxFreeAmount()));
-  HttpEntity entity = new HttpEntity(body, headers);
-  PayCancelResponseVO response = 
-      template.postForObject(uri, entity, PayCancelResponseVO.class);
-  return response;
-	}	
 }
 `}
                   </code></pre>

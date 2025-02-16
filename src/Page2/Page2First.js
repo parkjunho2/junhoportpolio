@@ -28,8 +28,8 @@ const Page2First=()=>{
                     <h2 className='mt-4 text-warning'>주요기술 요약</h2>
                     <h4>JSP사용하여 정적 웹 페이지를 생성, MVC패턴으로 서버와<br/> 
                     클라이언트를 나눠 요청처리하도록 코드를 작성했습니다. <br/><br/>
-                    JS코드는 jQuery의 CDN을 불러와 DOM조작과 AJAX를<br/>
-                    통해 비동기적으로 서버와 데이터를 통신하여 페이지 리로드 없이 <br/>
+                    JS코드는 jQuery의 CDN으로 DOM조작과 AJAX를 통해<br/>
+                    비동기적으로 서버와 데이터를 통신하여 페이지 리로드 없이 <br/>
                     동적인 이벤트를 받아올수 있도록 코드를 작성했습니다.</h4>
                   </div>
                     </div>

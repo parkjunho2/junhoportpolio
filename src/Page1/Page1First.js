@@ -1,5 +1,4 @@
-import SwiperComponent from '../components/options/SwiperComponent';
-
+import Images from "../components/options/Images";
 
 const Page1First=()=>{
 
@@ -15,7 +14,7 @@ const Page1First=()=>{
             </div>
             
             <div className='col-md-6 col-sm-12 pe-5'>
-            <SwiperComponent/> 
+                  <Images/>
             </div>
           </div>
     </>)
