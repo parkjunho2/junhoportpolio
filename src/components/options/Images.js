@@ -11,15 +11,15 @@ const Images = () => {
       { front: "/images/oracle.png", back: "Frequent" },
       { front: "/images/dbeaver.png", back: "Frequent" },
       { front: "/images/netlify.png", back: "Frequent" },
-      { front: "/images/route53.webp", back: "Knowledege" },
-      { front: "/images/jQuery.png", back: "Knowledege" },
-      { front: "/images/mysql.png", back: "Knowledege" },
-      { front: "/images/awsrds.png", back: "Knowledege" },
+      { front: "/images/route53.webp", back: "Knowledge" },
+      { front: "/images/jQuery.png", back: "Knowledge" },
+      { front: "/images/mysql.png", back: "Knowledge" },
+      { front: "/images/awsrds.png", back: "Knowledge" },
+      { front: "/images/ubuntu.png", back: "Knowledge" },
       { front: "/images/redis.png", back: "Learning" },
       { front: "/images/gitaction.png", back: "Learning" },
       { front: "/images/kubernetes.webp", back: "Learning" },
       { front: "/images/docker.png", back: "Learning" },
-      { front: "/images/ubuntu.png", back: "Learning" },
     ];
   
     return (
