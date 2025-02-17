@@ -204,7 +204,7 @@ border: none;
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
 }
 
 .flip-box {
@@ -234,7 +234,7 @@ border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -247,14 +247,18 @@ border: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* 뒷면 (글씨) */
 .flip-back {
-  background-color: #fff;
+  background-color: black;
   color: white;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
+  align-items: center !important;
   transform: rotateY(180deg);
+}
+.gray-image {
+  filter: grayscale(100%);
 }
