@@ -1,5 +1,5 @@
 import Images from "../components/options/Images";
-
+import { FaGithub } from "react-icons/fa";
 const Page1First=()=>{
 
     return(<>
@@ -7,7 +7,10 @@ const Page1First=()=>{
             <div className='col-md-6 col-sm-12 ps-5'>
                   <h2>Don’t reinvent the wheel, just improve it</h2>
                   <h2 className="mb-5">바퀴를 발명하지말고, 개선해나가자</h2>
-                  <h4>Email: pp01024689860@gmail.com</h4>      
+                  <h4 className="">Email: pp01024689860@gmail.com</h4>
+                  <a href="https://github.com/parkjunho2">
+                  <h2 className="mt-5 text-black"><FaGithub /></h2>      
+                  </a>
             </div>
             
             <div className='col-md-6 col-sm-12 pe-5'>
