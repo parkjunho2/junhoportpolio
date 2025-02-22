@@ -1,3 +1,4 @@
+import { FaGithub } from "react-icons/fa";
 
 const Page3First=()=>{
 
@@ -13,6 +14,12 @@ const Page3First=()=>{
                   <a href='https://www.erdcloud.com/d/YtXD93EMHNXZDmkch' className='text-warning' id='link-a'>
                     ERD Link
                     </a>
+                     <a href="https://github.com/parkjunho2/project-spring" className="text-black ms-5" title="BackEnd Server">
+                      <FaGithub />     
+                      </a>
+                      <a href="https://github.com/parkjunho2/project-react" className="text-black ms-3" title="FrontEnt Client">
+                      <FaGithub />     
+                      </a>
                     </h2>
                    </div>         
                   <div className='row col-md-6 col-sm-12 ps-4'>

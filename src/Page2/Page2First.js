@@ -1,3 +1,4 @@
+import { FaGithub } from "react-icons/fa";
 
 const Page2First=()=>{
 
@@ -13,6 +14,9 @@ const Page2First=()=>{
                   <a href='https://www.erdcloud.com/d/aLZnhSbNA6kKDuM8f' className='text-primary' id='link-a'>
                     ERD Link
                     </a>
+                      <a href="https://github.com/mincheol11/kh14semi3" className="text-black ms-5" title="semi github">
+                                        <FaGithub />     
+                                        </a>
                     <div className="mt-5">
                     ID: kha01240001  PW: kha0124001KH!
                     </div>
