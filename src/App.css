@@ -252,8 +252,8 @@ border: none;
 
 /* 뒷면 (글씨) */
 .flip-back {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 17px;
   font-weight: bold;
   align-items: center !important;

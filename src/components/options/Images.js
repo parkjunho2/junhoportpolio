@@ -13,14 +13,16 @@ const Images = () => {
       { front: "/images/netlify.png", back: "Frequent" },
       { front: "/images/route53.webp", back: "Frequent" },
       { front: "/images/S3.png", back: "Frequent" },
+      { front: "/images/ubuntu.png", back: "Frequent" },
+      { front: "/images/gitaction.png", back: "Frequent" },
       { front: "/images/jQuery.png", back: "Knowledge" },
       { front: "/images/mysql.png", back: "Knowledge" },
       { front: "/images/awsrds.png", back: "Knowledge" },
-      { front: "/images/ubuntu.png", back: "Knowledge" },
-      { front: "/images/redis.png", back: "Learning" },
-      { front: "/images/gitaction.png", back: "Learning" },
+      { front: "/images/jmeter.png", back: "Knowledge" },
+      // { front: "/images/redis.png", back: "Learning" },
       { front: "/images/kubernetes.webp", back: "Learning" },
       { front: "/images/docker.png", back: "Learning" },
+      { front: "/images/k6.png", back: "Learning" },
     ];
   
     return (
@@ -34,7 +36,9 @@ const Images = () => {
               </div>
               {/* 뒷면 (글씨) */}
               <div className="flip-back">
+              <a href={img.link} target="_blank" rel="noreferrer">
                 <p>{img.back}</p>
+                </a>
               </div>
             </div>
           </div>
