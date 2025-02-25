@@ -121,7 +121,7 @@ function App() {
                 <Extensions2/>
               </div>
               <div className='slide'>
-                 <h1 className='text-center'>UpLading Soon...</h1>
+                 <h1 className='text-center'>UpLoading Soon...</h1>
               </div>
           </div>
 
