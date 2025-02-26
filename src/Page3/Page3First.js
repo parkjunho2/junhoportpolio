@@ -1,4 +1,5 @@
 import { FaGithub } from "react-icons/fa";
+import ScrollOut from "scroll-out";
 
 const Page3First=()=>{
 
