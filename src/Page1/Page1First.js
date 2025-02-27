@@ -18,8 +18,15 @@ const Page1First=()=>{
             
             setTimeout(() => {
                   ScrollOut({
+                        targets: '[data-scroll2]'
                   });
                 }, 100);
+
+                setTimeout(() => {
+                  ScrollOut({
+                        targets: '[data-scroll]'
+                  });
+                }, 100);    
 
       }, []);
 
@@ -28,9 +35,9 @@ const Page1First=()=>{
             <div className='col-md-6 col-sm-12 ps-5'>
                   <h2 id='title'>Don’t reinvent the wheel, just improve it</h2>
                   <h2 className="mb-5" id='title2'>바퀴를 발명하지말고, 개선해나가자</h2>
-                  <h4 data-scroll>Email: pp01024689860@gmail.com</h4>
+                  <h4 data-scroll2>Email: pp01024689860@gmail.com</h4>
                   <a href="https://github.com/parkjunho2">
-                  <h2 className="my-5 text-black" title="GitHub" data-scroll><FaGithub /></h2>      
+                  <h2 className="my-5 text-black" title="GitHub" data-scroll2><FaGithub /></h2>      
                   </a>
             </div>
             
