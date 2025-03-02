@@ -9,27 +9,27 @@ const Page3Info=()=>{
 {`1      {
 2       "BackEnd" : {
 3                "OS" : "MacOs3" ,                                            
-4          "Language" : "Java" ,
+4     "Language" : "Java" ,
 5               "IDE" : "VSCode" ,
-6         "FrameWork" : "Spring Boot" ,
-7             "RDBMS" : { "Oracle11g" : "DBeaver" } ,
-8          "ORMapper" : "MyBatis" ,
-9               "WAS" : "Apache Tomcat" ,
-10          "Library" : [
+6 "FrameWork" : "Spring Boot" ,
+7        "RDBMS" : { "Oracle11g" : "DBeaver" } ,
+8  "ORMapper" : "MyBatis" ,
+9             "WAS" : "Apache Tomcat" ,
+10       "Library" : [
 11                     { "Spring Web" ,  "Spring Boot DevTools" , "Oracle Driver" ,  
 12                     "Lombok", "Java Mail Sender", "Spring Security", "Spring Data JDBC",
 13                     "WebSocket", "MyBatis Framwork", "React",
-14                     }
-15                    ]
-16                },
-17     "FrontEnd": {
+14                    }
+15                ]
+16            },
+17  "FrontEnd" : {
 18              "UI" :  { "RestfulAPI" : "Ajax" } ,
 19              "JS" : { "EC6"  : "React" } ,
-20             "API" : { "KakaoPay" , "open-meteo" },
-21             "npm" : [
+20           "API" : { "KakaoPay" , "open-meteo" },
+21          "npm" : [
 22                      { "Moment" ,  "Chart.js",  "Cinema-seat", "Bootstrap", 
 23                      "Axios, "Recoil", "jsdelivr"  }
-24                    ]
+24                   ]
 25             }
 26   }
 `}</pre>
