@@ -24,7 +24,7 @@ const Page3Info=()=>{
 16         },
 17  "FrontEnd" : {
 18                    "UI" :  { "RESTful API" : "Ajax" } ,
-19                    "JS" : { "EC6"  : "React" } ,
+19                    "JS" : { "ES6"  : "React" } ,
 20                 "API" : { "KakaoPay" , "open-meteo" },
 21                "npm" : [
 22                            { "Moment" ,  "Chart.js",  "Cinema-seat", "Bootstrap", 

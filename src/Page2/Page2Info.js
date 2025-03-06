@@ -25,7 +25,7 @@ const Page2Info=()=>{
 17            },
 18   "FrontEnd" : {
 19                   "UI" :  { "MVC" : "JSP" } ,
-20                   "JS" : { "EC5"  : "JQuery" } ,
+20                   "JS" : { "ES5"  : "JQuery" } ,
 21                  "API" : "KakaoMap" ,
 22               "CDN" : [
 23                             { "Moment" ,  "JQuery",  "SweetAlert2" }
