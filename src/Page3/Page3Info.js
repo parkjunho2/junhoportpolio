@@ -23,7 +23,7 @@ const Page3Info=()=>{
 15               ]
 16         },
 17  "FrontEnd" : {
-18                    "UI" :  { "CSR" : "RESTful API" } ,
+18                    "UI" :  { "CSR" : "RESTful API", "Ajax" } ,
 19                    "JS" : { "ES6"  : "React" } ,
 20                 "API" : { "KakaoPay" , "open-meteo" },
 21                "npm" : [
