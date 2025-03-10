@@ -24,7 +24,7 @@ const Page2Info=()=>{
 16                 ]
 17            },
 18   "FrontEnd" : {
-19                   "UI" :  { "SSR" : "JSP" } ,
+19                   "UI" :  { "SSR" : "JSP, MVC" } ,
 20                   "JS" : { "ES5"  : "JQuery" } ,
 21                  "API" : "KakaoMap" ,
 22               "CDN" : [
